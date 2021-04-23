@@ -2,49 +2,56 @@ import java.util.*;
 
 public class Case {
 
-	private Piece[] contenu;
-	private String colonne;
+	private Piece contenu;
+	private char colonne;
 	private int rangee;
 	
 	public Case(){
-		this.contenu[0]= new Piece();
-		this.colonne = new String();
+		this.contenu = new Piece();
+		this.colonne = 'A';
 		this.rangee = 0;
 	}
 	
-	public Case(Piece p,String c, int r){
-		this.contenu[0]= p;
+	public Case(Piece p,char c, int r){
+		this.contenu = p;
 		this.colonne = c;
 		this.rangee = r;
 	}
 	
-	public Case(String c, int r){
-		this.contenu[0]= new Piece();
+	public Case(char c, int r){
+		this.contenu = new Piece();
 		this.colonne = c;
 		this.rangee = r;
 	}
 	
-	public Piece[] getContenu(){
-		return contenu;
+	public Piece getContenu(){
+		return this.contenu;
 	}
 	
-	public String getColonne(){
-		return colonne;
+	public char getColonne(){
+		return this.colonne;
 	}
 	
 	public int getRangee(){
-		return rangee;
+		return this.rangee;
 	}
 	
 	public void setContenu(Piece p){
-		this.contenu[0] = p;
+		this.contenu = p;
 	}
 	
-	public void setColonne(String c){
+	public void setColonne(char c){
 		this.colonne = c;
 	}
 	
 	public void setRangee(int r){
 		this.rangee = r;
+	}
+	
+	public static void main(String[] args) {
+		Case a = new Case('B',5);
+		System.out.println(a.getColonne());
+		a.setColonne('C');
+		System.out.println(a.getColonne());
 	}
 }	
