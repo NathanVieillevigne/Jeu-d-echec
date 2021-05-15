@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Piece {
 	
-	private String nom;
+	protected String nom;
 	protected String apparence;
 	private char colonne;
 	private int rangee;
@@ -16,8 +16,8 @@ public class Piece {
 		this.couleur = new String();
 	}
 	
-	public Piece(String n,char c,int r){
-		this.nom = n;
+	public Piece(char c,int r){
+		this.nom = null;
 		this.colonne = c;
 		this.rangee = r;
 		this.apparence = null;

@@ -19,7 +19,7 @@ public class Case {
 	}
 	
 	public Case(char c, int r){
-		this.contenu = new Piece();
+		this.contenu = null;
 		this.colonne = c;
 		this.rangee = r;
 	}
@@ -53,7 +53,7 @@ public class Case {
 		System.out.println(a.getColonne());
 		a.setColonne('C');
 		System.out.println(a.getColonne());
-		Case b = new Case(new Piece("Fou",'A',2),'A',2);
+		Case b = new Case(new Piece('A',2),'A',2);
 		System.out.println(b.getContenu().getCouleur());
 		b.getContenu().setRangee(1);
 		System.out.println(b.getContenu().getCouleur());

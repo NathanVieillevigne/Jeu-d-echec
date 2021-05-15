@@ -1,7 +1,8 @@
 public class Fou extends Piece{
 	
-	public Fou(String n, char c, int r){
-		super(n,c,r);
+	public Fou(char c, int r){
+		super(c,r);
+		this.nom = "Fou";
 		if(this.couleur == "Blanc"){
 			this.apparence = "\u265D";
 		}

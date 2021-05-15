@@ -1,7 +1,8 @@
 public class Tour extends Piece{
 	
-	public Tour(String n, char c, int r){
-		super(n,c,r);
+	public Tour(char c, int r){
+		super(c,r);
+		this.nom = "Tour";
 		if(this.couleur == "Blanc"){
 			this.apparence = "\u265C";
 		}

@@ -1,7 +1,8 @@
 public class Roi extends Piece{
 	
-	public Roi(String n, char c, int r){
-		super(n,c,r);
+	public Roi(char c, int r){
+		super(c,r);
+		this.nom = "Roi";
 		if(this.couleur == "Blanc"){
 			this.apparence = "\u265A";
 		}

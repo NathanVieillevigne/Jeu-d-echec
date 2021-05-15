@@ -1,7 +1,8 @@
 public class Reine extends Piece{
 	
-	public Reine(String n, char c, int r){
-		super(n,c,r);
+	public Reine(char c, int r){
+		super(c,r);
+		this.nom = "Reine";
 		if(this.couleur == "Blanc"){
 			this.apparence = "\u265B";
 		}

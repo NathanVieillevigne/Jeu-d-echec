@@ -1,7 +1,8 @@
 public class Cavalier extends Piece{
 	
-	public Cavalier(String n, char c, int r){
-		super(n,c,r);
+	public Cavalier(char c, int r){
+		super(c,r);
+		this.nom = "Cavalier";
 		if(this.couleur == "Blanc"){
 			this.apparence = "\u265E";
 		}

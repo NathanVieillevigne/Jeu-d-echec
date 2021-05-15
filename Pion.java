@@ -1,7 +1,8 @@
 public class Pion extends Piece{
 	
-	public Pion(String n, char c, int r){
-		super(n,c,r);
+	public Pion(char c, int r){
+		super(c,r);
+		this.nom = "Pion";
 		if(this.couleur == "Blanc"){
 			this.apparence = "\u265F";
 		}
@@ -15,9 +16,9 @@ public class Pion extends Piece{
 	}
 	
 	public static void main(String[] args) {
-		Pion p = new Pion("Pion",'A',1);
+		Pion p = new Pion('A',1);
 		System.out.println(p.getApparence());
-		Pion d =new Pion("Pion",'A',7);
+		Pion d =new Pion('A',7);
 		System.out.println(d.getApparence());
 	}
 }
