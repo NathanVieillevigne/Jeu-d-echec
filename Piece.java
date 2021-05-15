@@ -22,10 +22,10 @@ public class Piece {
 		this.rangee = r;
 		this.apparence = null;
 		if(r > 0 && r <= 2){
-			this.couleur = "Blanc";
+			this.couleur = "Noir";
 		}
 		if(r >= 7 && r < 9){
-			this.couleur = "Noir";
+			this.couleur = "Blanc";
 		}
 	}
 	
@@ -51,6 +51,10 @@ public class Piece {
 	
 	public void setColonne(char c){
 		this.colonne = c;
+	}
+	
+	public String getApparence(){
+		return this.apparence;
 	}
 	
 	public void setRangee(int r){

@@ -4,10 +4,14 @@ public class Tour extends Piece{
 		super(c,r);
 		this.nom = "Tour";
 		if(this.couleur == "Blanc"){
-			this.apparence = "\u265C";
+			this.apparence = "TB";
 		}
 		else{
-			this.apparence = "\u2656";
+			this.apparence = "TN";
 		}
+	}
+	
+	public String getApparence(){
+		return this.apparence;
 	}
 }

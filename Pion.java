@@ -1,13 +1,14 @@
+
 public class Pion extends Piece{
 	
 	public Pion(char c, int r){
 		super(c,r);
 		this.nom = "Pion";
 		if(this.couleur == "Blanc"){
-			this.apparence = "\u265F";
+			this.apparence = "PB";
 		}
 		else{
-			this.apparence = "\u2659";
+			this.apparence = "PN";
 		}
 	}
 	

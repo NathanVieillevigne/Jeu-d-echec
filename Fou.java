@@ -4,10 +4,14 @@ public class Fou extends Piece{
 		super(c,r);
 		this.nom = "Fou";
 		if(this.couleur == "Blanc"){
-			this.apparence = "\u265D";
+			this.apparence = "FB";
 		}
 		else{
-			this.apparence = "\u2657";
+			this.apparence = "FN";
 		}
+	}
+	
+	public String getApparence(){
+		return this.apparence;
 	}
 }

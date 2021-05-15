@@ -4,10 +4,14 @@ public class Cavalier extends Piece{
 		super(c,r);
 		this.nom = "Cavalier";
 		if(this.couleur == "Blanc"){
-			this.apparence = "\u265E";
+			this.apparence = "CB";
 		}
 		else{
-			this.apparence = "\u2658";
+			this.apparence = "CN";
 		}
+	}
+	
+	public String getApparence(){
+		return this.apparence;
 	}
 }
