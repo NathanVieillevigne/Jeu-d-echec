@@ -3,31 +3,46 @@ import java.util.*;
 public class Piece {
 	
 	private String nom;
+	protected String apparence;
 	private char colonne;
 	private int rangee;
+	protected String couleur;
 	
 	public Piece(){
 		this.nom = new String();
 		this.colonne = 'A';
+		this.apparence = null;
 		this.rangee = 0;
+		this.couleur = new String();
 	}
 	
 	public Piece(String n,char c,int r){
 		this.nom = n;
 		this.colonne = c;
 		this.rangee = r;
+		this.apparence = null;
+		if(r > 0 && r <= 2){
+			this.couleur = "Blanc";
+		}
+		if(r >= 7 && r < 9){
+			this.couleur = "Noir";
+		}
 	}
 	
 	public String getNom(){
-		return nom;
+		return this.nom;
+	}
+	
+	public String getCouleur(){
+		return this.couleur;
 	}
 	
 	public char getColonne(){
-		return colonne;
+		return this.colonne;
 	}
 	
 	public int getRangee(){
-		return rangee;
+		return this.rangee;
 	}
 	
 	public void setNom(String n){
@@ -43,7 +58,7 @@ public class Piece {
 	}
 	
 	public void deplacement(char c,int r){
-		if(c == 'A' || c == 'B' || c == 'C' || c == 'D' || c == 'E' || c == 'F' || c == 'G'|| c == 'H' && r == 1 || r == 2 || r == 3 || r == 4 || r == 5 || r == 6 || r == 7 || r == 8){
+		if((c >= 'A' && c <= 'H') && (r > 0 && r < 9)){
 			this.colonne = c;
 			this.rangee = r;
 		}

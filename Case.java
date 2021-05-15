@@ -53,5 +53,10 @@ public class Case {
 		System.out.println(a.getColonne());
 		a.setColonne('C');
 		System.out.println(a.getColonne());
+		Case b = new Case(new Piece("Fou",'A',2),'A',2);
+		System.out.println(b.getContenu().getCouleur());
+		b.getContenu().setRangee(1);
+		System.out.println(b.getContenu().getCouleur());
+		System.out.println(b.getContenu().getRangee());
 	}
 }	
