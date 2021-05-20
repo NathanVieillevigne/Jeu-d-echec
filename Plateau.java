@@ -42,6 +42,58 @@ public class Plateau {
 			}
 		}
 	}
+	public int chartoInt(char c){
+		int a;
+		if(c == 'A'){
+			a = 0;
+		}
+		else if(c == 'B'){
+			a = 1;
+		}	
+		else if(c == 'C'){
+			a = 2;
+		}
+		else if (c == 'D'){
+			a = 3;
+		}
+		else if (c == 'E'){
+			a = 4;
+		} 
+		else if(c == 'F'){
+			a = 5;
+		}
+		else if(c == 'G'){
+			a = 6;
+		}
+		else if(c == 'H'){
+			a = 7;
+		}
+		else{
+			a = 0;
+		}
+		return a;
+	}
+	
+	public void deplacementPiece(char c1,int r1, char c2, int r2){
+		int c11 = this.chartoInt(c1);
+		int c12 = this.chartoInt(c2);
+		if(this.cases[r1-1][c11] != this.cases[r2-1][c12] && this.cases[r1-1][c11].contenu != null){
+			if(this.cases[r2-1][c12].contenu != null){
+				if(this.cases[r1-1][c11].contenu.memeCouleur(this.cases[r2-1][c12].contenu) != true){
+					if(this.cases[r1-1][c11].getContenu().deplacement(c2,r2) == true){
+						this.cases[r2-1][c12].contenu = this.cases[r1-1][c11].contenu;
+						this.cases[r1-1][c11].contenu = null;
+					}
+				}
+			}	
+			
+			else if(this.cases[r1-1][c11].getContenu().deplacement(c2,r2) == true){
+				this.cases[r2-1][c12].contenu = this.cases[r1-1][c11].contenu;
+				this.cases[r1-1][c11].contenu = null;
+			}
+		}
+		this.affichage();
+	}
 	
 	public void affichage(){
 		String s;
@@ -66,7 +118,12 @@ public class Plateau {
 				
 	public static void main(String[] args) {
 		Plateau plateaudejeu = new Plateau();
-		System.out.println(plateaudejeu.cases[3][3].getColonne());
 		plateaudejeu.affichage();
+		plateaudejeu.deplacementPiece('B',7,'B',6);
+		plateaudejeu.deplacementPiece('B',6,'B',5);
+		plateaudejeu.deplacementPiece('B',5,'B',6);
+		plateaudejeu.deplacementPiece('B',2,'B',3);
+		plateaudejeu.deplacementPiece('B',3,'B',4);
+		plateaudejeu.deplacementPiece('B',4,'B',5);
 	}
 }

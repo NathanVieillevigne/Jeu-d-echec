@@ -4,8 +4,8 @@ public class Piece {
 	
 	protected String nom;
 	protected String apparence;
-	private char colonne;
-	private int rangee;
+	protected char colonne;
+	protected int rangee;
 	protected String couleur;
 	
 	public Piece(){
@@ -53,6 +53,19 @@ public class Piece {
 		this.colonne = c;
 	}
 	
+	public void setCouleur(String c){
+		this.couleur = c;
+	}
+	
+	public boolean memeCouleur(Piece p){
+			if(this.couleur == p.couleur){
+				return true;
+			}
+			else{
+				return false;
+			}
+	}
+	
 	public String getApparence(){
 		return this.apparence;
 	}
@@ -61,10 +74,14 @@ public class Piece {
 		this.rangee = r;
 	}
 	
-	public void deplacement(char c,int r){
+	public boolean deplacement(char c,int r){
 		if((c >= 'A' && c <= 'H') && (r > 0 && r < 9)){
 			this.colonne = c;
 			this.rangee = r;
+			return true;
+		}
+		else{
+			return false;
 		}
 	}
 }

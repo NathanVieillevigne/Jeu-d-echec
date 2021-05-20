@@ -2,9 +2,9 @@ import java.util.*;
 
 public class Case {
 
-	private Piece contenu;
-	private char colonne;
-	private int rangee;
+	protected Piece contenu;
+	protected char colonne;
+	protected int rangee;
 	
 	public Case(){
 		this.contenu = new Piece();

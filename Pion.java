@@ -16,6 +16,25 @@ public class Pion extends Piece{
 		return this.apparence;
 	}
 	
+	public boolean deplacement(char c, int r){
+		boolean a = false;
+		if(this.couleur == "Noir"){
+			if(r != this.rangee && r == this.rangee + 1 && r != 0){
+				this.colonne = c;
+				this.rangee = r;
+				a = true;
+			}
+		}
+		if(this.couleur == "Blanc"){
+			if(r != this.rangee && r == this.rangee - 1 && r != 9){
+				this.colonne = c;
+				this.rangee = r;
+				a = true;
+			}
+		}
+		return a;
+	}
+	
 	public static void main(String[] args) {
 		Pion p = new Pion('A',1);
 		System.out.println(p.getApparence());
