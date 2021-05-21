@@ -7,6 +7,7 @@ public class Piece {
 	protected char colonne;
 	protected int rangee;
 	protected String couleur;
+	protected boolean premier_mvt = false;
 	
 	public Piece(){
 		this.nom = new String();

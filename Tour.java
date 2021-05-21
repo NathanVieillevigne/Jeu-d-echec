@@ -11,6 +11,16 @@ public class Tour extends Piece{
 		}
 	}
 	
+	public boolean deplacement(char c, int r){
+		boolean a = false;
+		if((r != this.rangee && c == this.colonne) || (c != this.colonne && r == this.rangee))  {
+			this.colonne = c;
+			this.rangee = r;
+			a = true;
+		}
+		return a;
+	}
+	
 	public String getApparence(){
 		return this.apparence;
 	}

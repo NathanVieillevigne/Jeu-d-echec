@@ -52,7 +52,7 @@ public class Plateau {
 		}	
 		else if(c == 'C'){
 			a = 2;
-		}
+		} 
 		else if (c == 'D'){
 			a = 3;
 		}
@@ -114,16 +114,4 @@ public class Plateau {
 		}
 		System.out.println(" "+"----------------------------------");
 	}		
-					
-				
-	public static void main(String[] args) {
-		Plateau plateaudejeu = new Plateau();
-		plateaudejeu.affichage();
-		plateaudejeu.deplacementPiece('B',7,'B',6);
-		plateaudejeu.deplacementPiece('B',6,'B',5);
-		plateaudejeu.deplacementPiece('B',5,'B',6);
-		plateaudejeu.deplacementPiece('B',2,'B',3);
-		plateaudejeu.deplacementPiece('B',3,'B',4);
-		plateaudejeu.deplacementPiece('B',4,'B',5);
-	}
 }

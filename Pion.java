@@ -19,14 +19,30 @@ public class Pion extends Piece{
 	public boolean deplacement(char c, int r){
 		boolean a = false;
 		if(this.couleur == "Noir"){
-			if(r != this.rangee && r == this.rangee + 1 && r != 0){
+			if(this.premier_mvt == false){
+				if(r != this.rangee && (r == this.rangee + 2 || r == this.rangee + 1)){
+					this.colonne = c;
+					this.rangee = r;
+					a = true;
+					this.premier_mvt = true;
+				}
+			}
+			else if(r != this.rangee && r == this.rangee + 1){
 				this.colonne = c;
 				this.rangee = r;
 				a = true;
 			}
 		}
 		if(this.couleur == "Blanc"){
-			if(r != this.rangee && r == this.rangee - 1 && r != 9){
+			if(this.premier_mvt == false){
+				if(r != this.rangee && (r == this.rangee - 2 || r == this.rangee - 1)){
+					this.colonne = c;
+					this.rangee = r;
+					a = true;
+					this.premier_mvt = true;
+				}
+			}
+			else if(r != this.rangee && r == this.rangee - 1){
 				this.colonne = c;
 				this.rangee = r;
 				a = true;
