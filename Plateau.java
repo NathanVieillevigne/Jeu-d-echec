@@ -74,6 +74,47 @@ public class Plateau {
 		return a;
 	}
 	
+	public String echec(){
+		int rb = 0;
+		char cb = 'A';
+		int rn = 0;
+		char cn = 'A';
+		for(int i = 0; i<8;i++){
+			for(int y = 0; y<8;y++){
+				if(this.cases[i][y].contenu != null){
+					if(this.cases[i][y].contenu.nom == "Roi"){
+						if(this.cases[i][y].contenu.couleur == "Noir"){
+							rb = this.cases[i][y].getRangee();
+							cb = this.cases[i][y].getColonne();
+						}
+						else{
+							rn = this.cases[i][y].getRangee();
+							cn = this.cases[i][y].getColonne();
+						}
+					}
+				}
+			}
+		}
+		for(int i = 0; i<8;i++){
+			for(int y = 0; y<8;y++){
+				if(this.cases[i][y].contenu != null){
+					if(this.cases[i][y].contenu.couleur == "Noir"){
+						if(this.cases[i][y].contenu.deplacement(cb,rb) == true){
+							return "Echec Blanc";
+						}
+					}
+					else if(this.cases[i][y].contenu.couleur == "Blanc"){
+						if(this.cases[i][y].contenu.deplacement(cn,rn) == true){
+							return "Echec Noir";
+						}
+					}
+				}
+			}
+		}
+		return "Pas Echec";
+	}
+						
+	
 	public void deplacementPiece(char c1,int r1, char c2, int r2){
 		int c11 = this.chartoInt(c1);
 		int c12 = this.chartoInt(c2);
