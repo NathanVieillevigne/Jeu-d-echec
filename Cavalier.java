@@ -12,13 +12,20 @@ public class Cavalier extends Piece{
 	}
 	
 	public boolean deplacement(char c, int r){
-		boolean a = false;
-		if((r != this.rangee && c != this.colonne) && ((r == this.rangee + 1 && (c == this.colonne + 2 ||c == this.colonne - 2)) || (r == this. rangee + 2 && (c == this.colonne - 1 || c == this.colonne + 1)) || (r == this.rangee - 1 && (c == this.colonne + 2 || c == this.colonne -2)) || (r == this.rangee - 2 && (c == this.colonne + 1 || c == this.colonne - 1)))){
-			this.colonne = c;
-			this.rangee = r;
-			a = true;
-		}
-		return a;
+		int x1 = this.colonne;
+		int y1 = this.rangee;
+		int x2 = c;
+		int y2 = r;
+			
+		if(y2 == y1 + 1 && (x2 == x1 + 2 || x2 == x1 - 2))	{ return true;}
+		if(y2 == y1 + 2 && (x2 == x1 - 1 || x2 == x1 + 1))	{ return true;}
+		if(y2 == y1 - 1 && (x2 == x1 + 2 || x2 == x1 -2))	{ return true;}
+		if(y2 == y1 - 2 && (x2 == x1 + 1 || x2 == x1 - 1))	{ return true;}
+			
+		x1 = x2;
+		y1 = y2;
+			
+		return false;
 	}
 	
 	public String getApparence(){

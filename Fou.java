@@ -14,14 +14,25 @@ public class Fou extends Piece{
 	}
 	
 	public boolean deplacement(char c, int r){
-		boolean a = false;
-		int b = Math.abs(this.rangee - r);
-		if((r != this.rangee && c != this.colonne) && ((c == this.colonne + b && r == this.rangee + b) || (c == this.colonne + b && r == this.rangee - b) || (c == this.colonne - b && r == this.rangee + b) || (c == this.colonne - b && r == this.rangee - b))){
-			this.colonne = c;
-			this.rangee = r;
-			a = true;
+		int x1 = this.colonne;
+		int y1 = this.rangee;
+		int x2 = c;
+		int y2 = r;
+		
+		if (x1==x2 && y1==y2){
+			return false;
 		}
-		return a;
+		
+		boolean ok = false;
+		if ((x2-x1)==(y2-y1)){	ok = true;}
+		if ((x2-x1)==(y1-y2)){	ok = true;}
+		
+		if ( ! ok )
+			return false;
+				
+		x1 = x2;
+		y1 = y2;
+		return true ;
 	}
 	
 	public String getApparence(){

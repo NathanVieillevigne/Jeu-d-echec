@@ -11,14 +11,27 @@ public class Tour extends Piece{
 		}
 	}
 	
-	public boolean deplacement(char c, int r){
-		boolean a = false;
-		if((r != this.rangee && c == this.colonne) || (c != this.colonne && r == this.rangee))  {
-			this.colonne = c;
-			this.rangee = r;
-			a = true;
+public boolean deplacement(char c, int r){
+		int x1 = this.colonne;
+		int y1 = this.rangee;
+		int x2 = c;
+		int y2 = r;
+		
+		if (x1==x2 && y1==y2){
+			return false;
 		}
-		return a;
+		
+		boolean ok = false;
+		if (x1==x2){				ok = true;}
+		if (y1==y2){				ok = true;}
+		
+		if ( ! ok ){
+			return false;
+		}
+				
+		x1 = x2;
+		y1 = y2;
+		return true ;
 	}
 	
 	public String getApparence(){
